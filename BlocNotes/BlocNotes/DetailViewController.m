@@ -8,7 +8,7 @@
 
 #import "DetailViewController.h"
 
-@interface DetailViewController ()
+@interface DetailViewController ()  <UITextViewDelegate>
 
 @end
 
@@ -22,6 +22,7 @@
             
         // Update the view.
         [self configureView];
+        
     }
 }
 
@@ -35,7 +36,41 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+
     [self configureView];
+    self.textView.delegate = self;
+}
+
+
+//-(void) textViewDidEndnEditing:(UITextView *)textView {
+//    [textView resignFirstResponder];
+//}
+
+//- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+//    
+//    UITouch *touch = [[event allTouches] anyObject];
+//    if ([_textView isFirstResponder] && [touch view] != _textView) {
+//        [_textView resignFirstResponder];
+//    }
+//    [super touchesBegan:touches withEvent:event];
+//}
+
+ 
+//-(IBAction)saveText {
+//
+//    NSArray *documentPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+//    NSString *documentsDirectory = [documentPaths objectAtIndex:0];
+//    NSString *documentTXTPath = [documentsDirectory stringByAppendingPathComponent:@"savedText.txt"];
+//    
+//    NSString *savedString = textView.text;
+//    
+//}
+
+
+- (void)textFieldShouldReturn:(UITextView *)textView {
+    
+    [textView resignFirstResponder];
+    //Your view manipulation here if you moved the view up due to the keyboard etc.
 }
 
 - (void)didReceiveMemoryWarning {
