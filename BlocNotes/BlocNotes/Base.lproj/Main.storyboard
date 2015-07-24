@@ -123,11 +123,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lrm-kH-fPn" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="i7X-B9-VnG">
-                    <connections>
-                        <action selector="saveText" destination="Ah7-4n-0Wa" id="vLt-Hx-bVX"/>
-                    </connections>
-                </tapGestureRecognizer>
+                <tapGestureRecognizer id="i7X-B9-VnG"/>
             </objects>
             <point key="canvasLocation" x="1343" y="64"/>
         </scene>

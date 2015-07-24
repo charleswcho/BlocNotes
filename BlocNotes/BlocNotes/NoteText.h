@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+@class DetailViewController;
+
 @interface NoteText : NSObject <NSCoding>
+@property (strong, nonatomic) NSString *documentTXTPath;
 
 @end

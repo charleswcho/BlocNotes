@@ -7,8 +7,40 @@
 //
 
 #import "NoteText.h"
+#import "DetailViewController.h"
 
 @implementation NoteText
+
+
+
+- (void)saveStringFromStringPath {
+
+    NSArray *documentPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [documentPaths objectAtIndex:0];
+    self.documentTXTPath = [documentsDirectory stringByAppendingPathComponent:@"savedText.txt"];
+    
+    
+    NSString *savedString = self.DetailViewController.textView.text;
+
+    [savedString writeToFile:self.documentTXTPath atomically:YES encoding:NO error:nil];
+}
+
+- (void)retrieveStringFromStringPath {
+    
+    NSString *retrievedString = [[NSString alloc] initWithContentsOfFile:self.documentTXTPath encoding:NO error:nil];
+    
+    _textView.text = retrievedString;
+}
+
+
+
+
+
+
+
+
+
+
 
 //#pragma mark - NSCoding
 //
