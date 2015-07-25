@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import "Event.h"
 
 @interface DetailViewController ()  <UITextViewDelegate>
 
