@@ -16,7 +16,7 @@
 		BA35CBCB1B608BE5003D7A53 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA35CBCA1B608BE5003D7A53 /* Images.xcassets */; };
 		BA35CBCE1B608BE5003D7A53 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA35CBCC1B608BE5003D7A53 /* LaunchScreen.xib */; };
 		BA35CBDA1B608BE5003D7A53 /* BlocNotesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA35CBD91B608BE5003D7A53 /* BlocNotesTests.m */; };
-		BA35CBE51B619544003D7A53 /* NoteText.m in Sources */ = {isa = PBXBuildFile; fileRef = BA35CBE41B619544003D7A53 /* NoteText.m */; };
+		BA35CBE51B619544003D7A53 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = BA35CBE41B619544003D7A53 /* Note.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,8 +46,8 @@
 		BA35CBD31B608BE5003D7A53 /* BlocNotesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlocNotesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA35CBD81B608BE5003D7A53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA35CBD91B608BE5003D7A53 /* BlocNotesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlocNotesTests.m; sourceTree = "<group>"; };
-		BA35CBE31B619544003D7A53 /* NoteText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteText.h; sourceTree = "<group>"; };
-		BA35CBE41B619544003D7A53 /* NoteText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteText.m; sourceTree = "<group>"; };
+		BA35CBE31B619544003D7A53 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
+		BA35CBE41B619544003D7A53 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +95,8 @@
 				BA35CBC21B608BE5003D7A53 /* MasterViewController.m */,
 				BA35CBC41B608BE5003D7A53 /* DetailViewController.h */,
 				BA35CBC51B608BE5003D7A53 /* DetailViewController.m */,
-				BA35CBE31B619544003D7A53 /* NoteText.h */,
-				BA35CBE41B619544003D7A53 /* NoteText.m */,
+				BA35CBE31B619544003D7A53 /* Note.h */,
+				BA35CBE41B619544003D7A53 /* Note.m */,
 				BA35CBC71B608BE5003D7A53 /* Main.storyboard */,
 				BA35CBCA1B608BE5003D7A53 /* Images.xcassets */,
 				BA35CBCC1B608BE5003D7A53 /* LaunchScreen.xib */,
@@ -237,7 +237,7 @@
 				BA35CBBD1B608BE5003D7A53 /* AppDelegate.m in Sources */,
 				BA35CBC01B608BE5003D7A53 /* BlocNotes.xcdatamodeld in Sources */,
 				BA35CBBA1B608BE5003D7A53 /* main.m in Sources */,
-				BA35CBE51B619544003D7A53 /* NoteText.m in Sources */,
+				BA35CBE51B619544003D7A53 /* Note.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

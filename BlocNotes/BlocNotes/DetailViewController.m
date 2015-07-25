@@ -39,7 +39,6 @@
 
     [self configureView];
     self.textView.delegate = self;
-    [self retrieveStringFromStringPath];
 }
 
 
@@ -48,24 +47,8 @@
     UITouch *touch = [[event allTouches] anyObject];
     if ([_textView isFirstResponder] && [touch view] != _textView) {
         [_textView resignFirstResponder];
-        
-        NSArray *documentPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-        NSString *documentsDirectory = [documentPaths objectAtIndex:0];
-        self.documentTXTPath = [documentsDirectory stringByAppendingPathComponent:@"savedText.txt"];
-        
-        NSString *savedString = _textView.text;
-        
-        [savedString writeToFile:self.documentTXTPath atomically:YES encoding:NO error:nil];
-
     }
     [super touchesBegan:touches withEvent:event];
-}
-
-- (void)retrieveStringFromStringPath {
-    
-    NSString *retrievedString = [[NSString alloc] initWithContentsOfFile:self.documentTXTPath encoding:NO error:nil];
-    
-    _textView.text = retrievedString;
 }
 
 
