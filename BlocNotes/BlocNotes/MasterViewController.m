@@ -25,7 +25,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewNote:)];
     self.navigationItem.rightBarButtonItem = addButton;
     
     NSError *error;
@@ -45,13 +45,15 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)insertNewObject:(id)sender {
+- (void)insertNewNote:(id)sender {
     NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
     NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
     NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
         
     // If appropriate, configure the new managed object.
     // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
+    self.event = [[Event alloc] init];
+    
     [newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];
         
     // Save the context.
@@ -113,8 +115,8 @@
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     
-    Event *noteTitle = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = noteTitle.title;
+    self.event = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    cell.textLabel.text = self.event.title;
 
 }
 

@@ -7,13 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
 
 @class Event;
-
-@interface DetailViewController : UITableViewController
-
-@property (nonatomic, strong) Event *event;
-
+// Added NSFetchResultsControllerDelegate
+@interface DetailViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+//
 @end
 
 @interface DetailViewController ()
@@ -22,6 +21,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 @property (strong, nonatomic) IBOutlet UITextView *textView;
 
-
+// Added these to be able to fetch and save
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+//
 @end
 
